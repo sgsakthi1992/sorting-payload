@@ -1,0 +1,24 @@
+{
+  "fruits": [
+    "apple",
+    "pineapple",
+    "watermelon"
+  ],
+  "numbers": [
+    4,
+    7,
+    1333,
+    2431
+  ],
+  "colors": [
+    "green",
+    "blue",
+    "yellow"
+  ],
+  "languages": [
+    "Arabic",
+    "English",
+    "German",
+    "Hungarian"
+  ]
+}
