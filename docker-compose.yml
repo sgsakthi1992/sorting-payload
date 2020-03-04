@@ -1,0 +1,30 @@
+version: "3"
+services:
+  grafana:
+    image: grafana/grafana
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - sortingservice_network
+    volumes:
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=test
+
+  graphite:
+    image: graphiteapp/graphite-statsd
+    restart: always
+    ports:
+      - 90:80
+      - 2003-2004:2003-2004
+      - 2023-2024:2023-2024
+      - 8125:8125/udp
+      - 8126:8126
+    networks:
+      - sortingservice_network
+    depends_on:
+      - grafana
+
+networks:
+  sortingservice_network:
