@@ -1,9 +1,12 @@
 package com.sorting.sortingpayload.model;
 
+import com.sorting.sortingpayload.validator.KeysValueMatch;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+@KeysValueMatch
 public class SortRequest {
     private List<String> sortKeys;
     private Map<String, List<?>> payload;

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class SortingController {
     }
 
     @PostMapping("/sort")
-    public ResponseEntity<Map<String, List<?>>> sortPayload(@RequestBody SortRequest sortRequest) {
+    public ResponseEntity<Map<String, List<?>>> sortPayload(@RequestBody @Valid SortRequest sortRequest) {
         return ResponseEntity
                 .ok(sortingService
                         .sortPayload(sortRequest.getSortKeys(), sortRequest.getPayload()));
